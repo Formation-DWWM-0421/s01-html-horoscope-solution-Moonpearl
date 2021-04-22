@@ -9,6 +9,12 @@ body {
     line-height: 1.5;
 }
 
+@media print {
+    body {
+        font-size: .75em;
+    }
+}
+
 h1,
 h2,
 h3,
@@ -42,13 +48,23 @@ header hr {
     background-color: white;
     border: .1em solid white;
     border-radius: .1em;
-    box-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #fcfaa2, 0 0 30px #fcfaa2, 0 0 40px #fcfaa2;
+}
+
+@media screen {
+    header hr {
+        box-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #fcfaa2, 0 0 30px #fcfaa2, 0 0 40px #fcfaa2;
+    }
 }
 
 h1 {
     font-size: 2em;
     text-align: center;
-    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #fcfaa2, 0 0 30px #fcfaa2, 0 0 40px #fcfaa2;
+}
+
+@media screen {
+    h1 {
+        text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #fcfaa2, 0 0 30px #fcfaa2, 0 0 40px #fcfaa2;
+    }
 }
 
 h2 {
@@ -68,6 +84,22 @@ h3 {
     max-width: 768px;
     margin: 0 auto;
     padding: 1em;
+}
+
+@media (min-width: 450px) and (max-width: 599px) {
+    .grid3 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1em;   
+    }
+}
+
+@media (min-width: 600px) {
+    .grid3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;   
+    }
 }
 
 .sign {
@@ -103,4 +135,10 @@ footer {
     margin: 2rem -1rem -1rem;
     padding: 3rem 0;
     text-align: center;
+}
+
+@media print {
+    footer {
+        display: none;
+    }
 }
